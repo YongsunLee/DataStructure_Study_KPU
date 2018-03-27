@@ -1,0 +1,270 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <Windows.h>
+#include <string.h>
+#pragma warning(disable:4996)
+
+#define SIZE 200
+
+struct Champ{
+	char name[20];
+	float HealthPoint;
+	float MagicPoint;
+	float Power;
+};
+
+int Find_R(int num, char name[20], Champ *Champion);
+int Insert_R(int num, char name[20], Champ *Champion, Champ *CopyChampion);
+int Delete_R(int num, char name[20], Champ *Champion, Champ *CopyChampion);
+int PrintAll_R(int num, Champ *Champion);
+int FindMax_Health_R( int num, float temp, Champ *Champion);
+int FindMax_Health_Print_R( int num, float temp, Champ *Champion);
+int SortByMax_Health_R( int num, Champ *Champion,Champ *temp, Champ *CopyChampion);
+
+int i, j, k;
+float Health_temp;
+int num_temp;
+int num_copy;
+int ssize;
+
+int main()
+{
+	Champ Champion[SIZE] = { { "피즈", 500, 240, 56 },
+	{ "스웨인", 463, 290, 52 },
+	{ "를루", 497, 255, 46.6 },
+	{ "리 신", 513, 200, 59 },
+	{ "애쉬", 474, 208, 49.2 },
+	{ "다이애나", 528, 270, 51 },
+	{ "가렌", 551, 0, 55.5 },
+	{ "그라가스", 523, 268, 59.2 },
+	{ "나미", 439, 348, 51.1 },
+	{ "누누", 533, 255, 54.5 },
+	{ "라이즈", 500, 305, 55 },
+	{ "럭스", 424, 300, 53.3 },
+	{ "드레이븐", 502, 282, 50 },
+	{ "리븐", 500, 0, 54 },
+	{ "리산드라", 449, 270, 50.7 },
+	{ "마스터이", 536, 222, 58 },
+	{ "말파이트", 513, 255, 59.7 },
+	{ "문도", 522, 0, 59.2 },
+	{ "베인", 442, 208, 53.3 },
+	{ "블리츠 크랭크", 518, 240, 59.2 }, };
+	Champ tempChampion[SIZE], CopyChampion[SIZE];
+	int num;
+	int head;
+	float temp;
+	char Inputname[20];
+	int k = 0;
+	head = sizeof(Champion);
+
+	for (i = head; i < SIZE; ++i){
+		strcpy(Champion[i].name, NULL);
+		Champion[i].HealthPoint = 0;
+		Champion[i].MagicPoint = 0;
+		Champion[i].Power = 0;
+	}
+	
+	for (i = 0; i < SIZE; ++i){
+		strcpy(tempChampion[i].name, "\0");
+		tempChampion[i].HealthPoint = 0;
+		tempChampion[i].MagicPoint = 0;
+		tempChampion[i].Power = 0;
+	}
+
+	for (i = 0; i < SIZE; ++i){
+		strcpy(CopyChampion[i].name, Champion[i].name);
+		CopyChampion[i].HealthPoint = Champion[i].HealthPoint;
+		CopyChampion[i].MagicPoint = Champion[i].MagicPoint;
+		CopyChampion[i].Power = Champion[i].Power;
+	}
+
+	while (1){
+		printf("1. 검색 2. 추가 3. 삭제 4. 전체출력 5. FindMax_Health\n");
+		scanf("%d", &num);
+		fflush(stdin);
+
+		switch (num)
+		{
+		case 1:
+			printf("찾으려는 챔피언의 이름을 입력하세요\n");
+			gets(Inputname);
+
+			Find_R( SIZE, Inputname, Champion);
+			break;
+		case 2:
+			printf("이  름:");
+			gets(Inputname);
+
+			Insert_R( 0, Inputname, Champion, CopyChampion);
+			break;
+		case 3:
+			printf("이  름:");
+			gets(Inputname);
+			
+			Delete_R( 0, Inputname, Champion, CopyChampion);
+			break;
+		case 4:
+			PrintAll_R( 0, Champion);
+			break;
+		case 5:
+			temp = Champion[0].HealthPoint;
+			FindMax_Health_R(1, temp, Champion);
+			FindMax_Health_Print_R( 0, Health_temp, Champion);
+			break;
+		case 6:
+			SortByMax_Health_R(num, Champion, tempChampion, CopyChampion);
+			break;
+		default:
+			break;
+		}
+	}
+}
+
+int Find_R(int num, char name[20], Champ *Champion)
+{
+	if (strcmp(name, Champion[num].name) == 0){
+		printf("이  름: %s\n", Champion[num].name);
+		printf("체  력: %.2f\n", Champion[num].HealthPoint);
+		printf("마  력: %.2f\n", Champion[num].MagicPoint);
+		printf("공격력: %.2f\n", Champion[num].Power);
+		return 0;
+	} else if (num == 0){
+		printf("찾으려는 챔피언이 없습니다.\n");
+	} else
+		return Find_R(num - 1, name, Champion);
+}
+
+int Insert_R( int num, char name[20], Champ *Champion, Champ *CopyChampion)
+{
+	if ( strcmp(name, Champion[num].name) == 0){
+		printf("이미 존재하는 챔피언 입니다.\n");
+	}
+	else if (Champion[num].Power == 0){
+		strcpy(Champion[num].name, name);
+		strcpy(CopyChampion[num].name, name);
+		printf("체  력:");
+		scanf("%f", &Champion[num].HealthPoint);
+		CopyChampion[num].HealthPoint = Champion[num].HealthPoint;
+		fflush(stdin);
+		printf("마  력:");
+		scanf("%f", &Champion[num].MagicPoint);
+		CopyChampion[num].MagicPoint = Champion[num].MagicPoint;
+		fflush(stdin);
+		printf("공격력:");
+		scanf("%f", &Champion[num].Power);
+		CopyChampion[num].Power = Champion[num].Power;
+		fflush(stdin);
+	} else if ( num == SIZE){
+		printf("지정된 배열만큼의 범위를 다 사용하였습니다.\n");
+	} else
+		return Insert_R( num+1 , name, Champion, CopyChampion);
+}
+
+int Delete_R(int num, char name[20], Champ *Champion, Champ *CopyChampion)
+{
+	if (strcmp(name, Champion[num].name) == 0){
+		strcpy(Champion[num].name, Champion[num + 1].name);
+		Champion[num].HealthPoint = Champion[num + 1].HealthPoint;
+		Champion[num].MagicPoint = Champion[num + 1].MagicPoint;
+		Champion[num].Power = Champion[num + 1].Power;
+
+		strcpy(CopyChampion[num].name , CopyChampion[num+1].name);
+		CopyChampion[num].HealthPoint = CopyChampion[num + 1].HealthPoint;
+		CopyChampion[num].MagicPoint = CopyChampion[num + 1].MagicPoint;
+		CopyChampion[num].Power = CopyChampion[num + 1].Power;
+		k = 1;
+		return Delete_R(num + 1, name, Champion, CopyChampion);
+	}
+	else if ( k == 1 && num < SIZE){
+		strcpy(Champion[num].name, Champion[num + 1].name);
+		Champion[num].HealthPoint = Champion[num + 1].HealthPoint;
+		Champion[num].MagicPoint = Champion[num + 1].MagicPoint;
+		Champion[num].Power = Champion[num + 1].Power;
+		
+		strcpy(CopyChampion[num].name, CopyChampion[num + 1].name);
+		CopyChampion[num].HealthPoint = CopyChampion[num + 1].HealthPoint;
+		CopyChampion[num].MagicPoint = CopyChampion[num + 1].MagicPoint;
+		CopyChampion[num].Power = CopyChampion[num + 1].Power;
+		return Delete_R(num + 1, name, Champion, CopyChampion);
+	}
+	else if ( k == 1 && num >= SIZE){
+		strcpy(Champion[num].name, Champion[num + 1].name);
+		Champion[num].HealthPoint = Champion[num + 1].HealthPoint;
+		Champion[num].MagicPoint = Champion[num + 1].MagicPoint;
+		Champion[num].Power = Champion[num + 1].Power;
+		
+		strcpy(CopyChampion[num].name, CopyChampion[num + 1].name);
+		CopyChampion[num].HealthPoint = CopyChampion[num + 1].HealthPoint;
+		CopyChampion[num].MagicPoint = CopyChampion[num + 1].MagicPoint;
+		CopyChampion[num].Power = CopyChampion[num + 1].Power;
+		k = 0;
+		return 0;
+	} else if ( num >= SIZE){
+		printf("삭제할 챔피언이 없습니다.\n");
+	} else
+		return Delete_R(num+1, name, Champion, CopyChampion);
+}
+
+int PrintAll_R( int num, Champ *Champion)
+{
+	if (Champion[num].Power != 0){
+		printf("이  름:%s\n", Champion[num].name);
+		printf("체  력:%.2f\n", Champion[num].HealthPoint);
+		printf("마  력:%.2f\n", Champion[num].MagicPoint);
+		printf("공격력:%.2f\n", Champion[num].Power);
+		return PrintAll_R(num + 1, Champion);
+	} else
+		return 0;
+
+}
+
+int FindMax_Health_R( int num, float temp, Champ *Champion)
+{
+	if ( num < SIZE){
+		if (temp < Champion[num].HealthPoint){
+			temp = Champion[num].HealthPoint;
+			num_temp = num;
+		}
+		return FindMax_Health_R(num + 1, temp, Champion);
+	}
+	else {
+		Health_temp = temp;
+		num_copy = num_temp;
+	}
+}
+
+int FindMax_Health_Print_R( int num, float temp, Champ *Champion)
+{
+	if ( num < SIZE){
+		if (temp == Champion[num].HealthPoint){
+			printf("이름:%s\n", Champion[num].name);
+		}
+		return FindMax_Health_Print_R(num+1, temp, Champion);
+	}
+}
+
+int SortByMax_Health_R(int num, Champ *Champion, Champ tempChampion[], Champ CopyChampion[])
+{
+	if ( ssize > 0 ){
+		FindMax_Health_R(0, Health_temp, Champion);
+		strcpy(tempChampion[num].name, CopyChampion[num_copy].name);
+		tempChampion[num].HealthPoint = CopyChampion[num_copy].HealthPoint;
+		tempChampion[num].MagicPoint = CopyChampion[num_copy].MagicPoint;
+		tempChampion[num].Power = CopyChampion[num_copy].Power;
+		
+		Champion[num_copy].HealthPoint = 0;
+		Champion[num_copy].MagicPoint = 0;
+		Champion[num_copy].Power = 0;
+		num_copy = 0;
+		ssize -= 1;
+		return SortByMax_Health_R(num + 1, Champion, tempChampion, CopyChampion);
+	}
+	else if ( ssize <= 0 && num >= 0){
+		strcpy(Champion[num].name, tempChampion[num].name);
+		Champion[num].HealthPoint = tempChampion[num].HealthPoint;
+		Champion[num].MagicPoint = tempChampion[num].MagicPoint;
+		Champion[num].Power = tempChampion[num].Power;
+		return SortByMax_Health_R(num - 1, Champion, tempChampion, CopyChampion);
+	}
+		return 0;
+}

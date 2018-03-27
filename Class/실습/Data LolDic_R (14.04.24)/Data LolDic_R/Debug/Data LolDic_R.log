@@ -1,0 +1,19 @@
+﻿빌드 시작: 2014-04-24 오전 12:39:03
+     1>2 노드의 "D:\Job\2 - 1\자료구조\Data LolDic_R\Data LolDic_R\Data LolDic_R.vcxproj" 프로젝트(Build 대상)입니다.
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
+         main.cpp
+     1>d:\job\2 - 1\자료구조\data loldic_r\data loldic_r\main.cpp(51): warning C4305: '초기화 중' : 'double'에서 'float'(으)로 잘립니다.
+     1>d:\job\2 - 1\자료구조\data loldic_r\data loldic_r\main.cpp(135): warning C4715: 'Find_R' : 모든 제어 경로에서 값을 반환하지는 않습니다.
+     1>d:\job\2 - 1\자료구조\data loldic_r\data loldic_r\main.cpp(161): warning C4715: 'Insert_R' : 모든 제어 경로에서 값을 반환하지는 않습니다.
+     1>d:\job\2 - 1\자료구조\data loldic_r\data loldic_r\main.cpp(206): warning C4715: 'Delete_R' : 모든 제어 경로에서 값을 반환하지는 않습니다.
+     1>d:\job\2 - 1\자료구조\data loldic_r\data loldic_r\main.cpp(234): warning C4715: 'FindMax_Health_R' : 모든 제어 경로에서 값을 반환하지는 않습니다.
+     1>d:\job\2 - 1\자료구조\data loldic_r\data loldic_r\main.cpp(244): warning C4715: 'FindMax_Health_Print_R' : 모든 제어 경로에서 값을 반환하지는 않습니다.
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Job\2 - 1\자료구조\Data LolDic_R\Debug\Data LolDic_R.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\Job\2 - 1\자료구조\Data LolDic_R\Debug\Data LolDic_R.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Job\2 - 1\자료구조\Data LolDic_R\Debug\Data LolDic_R.lib" /MACHINE:X86 Debug\main.obj
+         Data LolDic_R.vcxproj -> D:\Job\2 - 1\자료구조\Data LolDic_R\Debug\Data LolDic_R.exe
+     1>"D:\Job\2 - 1\자료구조\Data LolDic_R\Data LolDic_R\Data LolDic_R.vcxproj" 프로젝트를 빌드했습니다(Build 대상).
+
+빌드했습니다.
+
+경과 시간: 00:00:00.92

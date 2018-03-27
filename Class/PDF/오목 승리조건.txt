@@ -1,0 +1,14 @@
+if(omok[x][y] == 1 && omok[x][y+1] == 1 && omok[x][y+2] == 1 && omok[x][y+3] == 1 && omok[x][y+4] == 1)
+직선 세로
+
+
+if(omok[x][y] == 1 && omok[x+1][y] == 1 && omok[x+2][y] == 1 && omok[x+3][y] == 1 && omok[x+4][y] == 1)
+직선 가로
+
+  
+if(omok[x][y] == 1 && omok[x+1][y+1] == 1 && omok[x+2][y+2] == 1 && omok[x+3][y+3] == 1 && omok[x+4][y+4] == 1)
+대각선 ↘
+
+
+if(omok[x][y] == 1 && omok[x+1][y-1] == 1 && omok[x+2][y-2] == 1 && omok[x+3][y-3] == 1 && omok[x+4][y-4] == 1)
+대각선 ↙

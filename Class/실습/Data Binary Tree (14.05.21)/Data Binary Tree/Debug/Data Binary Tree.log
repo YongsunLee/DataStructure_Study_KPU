@@ -1,0 +1,13 @@
+﻿빌드 시작: 2014-05-21 오후 10:15:43
+     1>2 노드의 "D:\Job\2 - 1\자료구조\Data Binary Tree\Data Binary Tree\Data Binary Tree.vcxproj" 프로젝트(Build 대상)입니다.
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt "이진검색트리.cpp"
+         이진검색트리.cpp
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Job\2 - 1\자료구조\Data Binary Tree\Debug\Data Binary Tree.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\Job\2 - 1\자료구조\Data Binary Tree\Debug\Data Binary Tree.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Job\2 - 1\자료구조\Data Binary Tree\Debug\Data Binary Tree.lib" /MACHINE:X86 "Debug\이진검색트리.obj"
+         Data Binary Tree.vcxproj -> D:\Job\2 - 1\자료구조\Data Binary Tree\Debug\Data Binary Tree.exe
+     1>"D:\Job\2 - 1\자료구조\Data Binary Tree\Data Binary Tree\Data Binary Tree.vcxproj" 프로젝트를 빌드했습니다(Build 대상).
+
+빌드했습니다.
+
+경과 시간: 00:00:00.37

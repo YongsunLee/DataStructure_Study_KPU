@@ -1,0 +1,140 @@
+/*
+
+언제나 말하지만 레포트는 필수
+
+"오목"
+
+1. 준비해온 기보 파일을 읽어들여 오목을 계속 둘 수 있는 기능을 구현하라.
+	1-1 파일 입출력 - 함수에대한것 공부하기
+	fopen, fclose , fread , fwrite
+	
+2. 바둑판의 현재 상태를 저장하여 기보 파일로 만드는 기능을 구현하라.
+	2-1 파일 입출력
+
+3. 오목에서 몇 수를 물렀다가 전부 원래대로 또는 
+	일부를 원래대로 두게 하는 기능을 스택 도는 큐를 이용하여 구현하라.
+	3-1 스택 리스트로 짜기!!!
+
+	x,y 포즈를 저장해야함
+	순서를 저장해야함.
+	턴도 저장해야함.
+
+	큐
+	FIFO = First In First Out
+
+	스택
+	LIFO = List In First Out
+
+	배열로 짜게되면 스택의 싸이즈가 부족해 질수 있고 당기고 넣는게 매우 오래걸림
+	단일 연결리스트로 구현함.
+	head -> tail (PUSH 연산을 함)
+	head -> NODE1 -> tail (한번 더함)
+	head -> NODE2 -> NODE1 ->tail 여기서 POP 연산을 하면
+	head -> NODE1 -> tail (POP연산은 가장 마지막에 들어온 것을 빼낸다 // push를 head 뒤에다 해야함)
+	head -> tail (POP 예외처리 head -> link 가 널인지 아닌지)
+
+	<수도 코드>
+	Push
+	NODE head 라는 전역변수
+	head -> link = NULL (tail 지정)
+	NODE *prev , *curr;
+	NODE *new_node = New NODE
+	new_node->link = head->link
+	head->link = new_node;
+	
+	POP
+	NODE head 라는 전역변수
+	head -> link = NULL (tail 지정)
+	NODE *prev , *curr;
+	prev = head;
+	curr = prev->link;
+	// 데이터가 없을때
+	if(curr == NULL){
+		return ;
+	}
+	리스트 상태가 이렇다면 (head -> NODE1 -> NULL)
+	prev->link = curr->link
+	delete curr;
+	
+	MSDM
+*/
+
+// 수도코드 코딩
+#include <stdio.h>
+
+struct NODE
+{
+	// 오목에 사용하려면
+	/*
+	int Pos_x;		그 돌의 x
+	int Pos_y;		그 돌의 y
+	int count;		몇번째 돌인지
+	int turn;		흰돌 , 검은돌
+	이정도가 필요해짐..
+	*/
+	int key;
+	NODE *link;
+};
+
+NODE head;
+
+// 기보를 읽고 쓸때
+// count (순서)가 필요하므로
+// 다 집어넣어서 오름차순을 쓰던가
+// 원하는 위치에다가 집어넣어서 사용하던가
+
+void Push(int key){
+	NODE *prev, *curr;
+
+	prev = &head;			// &는 head에 잇는 데이터를 가리키기 위해서
+	curr = prev->link;
+
+	NODE *new_node = new NODE;
+	new_node->key = key;
+	new_node->link = head.link;
+	head.link = new_node;
+}
+
+void Pop(){
+	NODE *prev, *curr;
+
+	prev = &head;		
+	curr = prev->link;
+	if(curr == NULL){
+		printf("데이터가 없습니다.");
+		return ;
+	} else {
+		prev->link = curr->link;
+		delete curr;
+	}
+
+	/*
+	Push의 데이터를 가지고 돌을 그리는거 해야함
+	*/
+}
+
+void Print(){
+	NODE *curr;
+	curr = head.link;
+
+	while(curr != NULL){
+		printf("%d ", curr->key);
+		curr = curr->link;
+	}
+	printf("\n");
+}
+
+int main()
+{
+	// 단일 연결 리스트로 STACK 구현
+	head.link= NULL;		// 전역으로 빼둬도 상관은 없음.
+	Push(3);
+	Push(5);
+	Push(10);
+	Print();
+	Pop();
+	Print();
+	Pop();
+	Print();
+	Pop();
+}

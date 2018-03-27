@@ -1,0 +1,19 @@
+재귀를 돌때 탈출하는 조건을 가장 먼저 만들어야 한다는 것.
+
+for문을 재귀로 바꾸고 내용을 사용하면 된다.
+
+int Serach_R (int num, char name[])
+
+if(num > 0)
+{
+	if(strcmp){
+	    출력
+	    return 0
+	}
+}
+else
+	return Search_R(num-1, name)
+
+버블정렬 사용
+
+int num1, nun2 사용함.

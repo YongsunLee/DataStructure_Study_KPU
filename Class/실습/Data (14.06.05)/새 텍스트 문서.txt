@@ -1,0 +1,8 @@
+#include "Stone_2013182034"
+
+BlackAttack_2013182034
+BlackDefence_2013182034
+
+WhiteAttack_2013182034
+WhiteDefence_2013182034
+

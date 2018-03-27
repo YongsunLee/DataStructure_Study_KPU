@@ -1,0 +1,37 @@
+﻿빌드 시작: 2014-03-26 오후 1:52:39
+     1>2 노드의 "D:\Job\2 - 1\자료구조\Data 02 - LolDic\Data 02 - LolDic\Data 02 - LolDic.vcxproj" 프로젝트(Build 대상)입니다.
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
+         main.cpp
+     1>d:\job\2 - 1\자료구조\data 02 - loldic\data 02 - loldic\main.cpp(46): warning C4305: '초기화 중' : 'double'에서 'float'(으)로 잘립니다.
+     1>d:\job\2 - 1\자료구조\data 02 - loldic\data 02 - loldic\main.cpp(50): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : 'strcpy' 선언을 참조하십시오.
+     1>d:\job\2 - 1\자료구조\data 02 - loldic\data 02 - loldic\main.cpp(59): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(283) : 'scanf' 선언을 참조하십시오.
+     1>d:\job\2 - 1\자료구조\data 02 - loldic\data 02 - loldic\main.cpp(90): warning C4996: 'gets': This function or variable may be unsafe. Consider using gets_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(254) : 'gets' 선언을 참조하십시오.
+     1>d:\job\2 - 1\자료구조\data 02 - loldic\data 02 - loldic\main.cpp(114): warning C4996: 'gets': This function or variable may be unsafe. Consider using gets_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(254) : 'gets' 선언을 참조하십시오.
+     1>d:\job\2 - 1\자료구조\data 02 - loldic\data 02 - loldic\main.cpp(127): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(283) : 'scanf' 선언을 참조하십시오.
+     1>d:\job\2 - 1\자료구조\data 02 - loldic\data 02 - loldic\main.cpp(130): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(283) : 'scanf' 선언을 참조하십시오.
+     1>d:\job\2 - 1\자료구조\data 02 - loldic\data 02 - loldic\main.cpp(133): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(283) : 'scanf' 선언을 참조하십시오.
+     1>d:\job\2 - 1\자료구조\data 02 - loldic\data 02 - loldic\main.cpp(150): warning C4996: 'gets': This function or variable may be unsafe. Consider using gets_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(254) : 'gets' 선언을 참조하십시오.
+     1>d:\job\2 - 1\자료구조\data 02 - loldic\data 02 - loldic\main.cpp(155): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : 'strcpy' 선언을 참조하십시오.
+     1>d:\job\2 - 1\자료구조\data 02 - loldic\data 02 - loldic\main.cpp(145): warning C4101: 'MagicPoint' :참조되지 않은 지역 변수입니다.
+     1>d:\job\2 - 1\자료구조\data 02 - loldic\data 02 - loldic\main.cpp(144): warning C4101: 'HealthPoint' :참조되지 않은 지역 변수입니다.
+     1>d:\job\2 - 1\자료구조\data 02 - loldic\data 02 - loldic\main.cpp(146): warning C4101: 'Power' :참조되지 않은 지역 변수입니다.
+     1>d:\job\2 - 1\자료구조\data 02 - loldic\data 02 - loldic\main.cpp(181): warning C4244: '초기화 중' : 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+     1>d:\job\2 - 1\자료구조\data 02 - loldic\data 02 - loldic\main.cpp(185): warning C4244: '=' : 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Job\2 - 1\자료구조\Data 02 - LolDic\Debug\Data 02 - LolDic.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\Job\2 - 1\자료구조\Data 02 - LolDic\Debug\Data 02 - LolDic.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Job\2 - 1\자료구조\Data 02 - LolDic\Debug\Data 02 - LolDic.lib" /MACHINE:X86 Debug\main.obj
+         Data 02 - LolDic.vcxproj -> D:\Job\2 - 1\자료구조\Data 02 - LolDic\Debug\Data 02 - LolDic.exe
+     1>"D:\Job\2 - 1\자료구조\Data 02 - LolDic\Data 02 - LolDic\Data 02 - LolDic.vcxproj" 프로젝트를 빌드했습니다(Build 대상).
+
+빌드했습니다.
+
+경과 시간: 00:00:01.85

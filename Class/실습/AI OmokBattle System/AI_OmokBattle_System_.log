@@ -1,0 +1,16 @@
+﻿빌드 시작: 2014-06-24 오전 2:21:34
+     1>2 노드의 "C:\Users\SunE\Desktop\AI_OmokBattle_System_(3)\AI_OmokBattle_System_.vcxproj" 프로젝트(Build 대상)입니다.
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(356,5): warning MSB8004: Intermediate Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Intermediate Directory.
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(357,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _VC80_UPGRADE=0x0600 /D _MBCS /Gm /EHsc /RTC1 /MTd /GS /Gy- /fp:precise /Zc:wchar_t /Zc:forScope /Yu"WHITE_2013180019_OG" /Fp".\Debug\\" /Fo".\Debug\\" /Fd".\Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp OmokBattleSystem.cpp
+         OmokBattleSystem.cpp
+     1>c:\users\sune\desktop\ai_omokbattle_system_(3)\omokbattlesystem.cpp(496): fatal error C1010: 미리 컴파일된 헤더를 찾는 동안 예기치 않은 파일의 끝이 나타났습니다. '#include "WHITE_2013180019_OG"'을(를) 소스에 추가하시겠습니까?
+         main.cpp
+     1>c:\users\sune\desktop\ai_omokbattle_system_(3)\main.cpp(9): fatal error C1083: 미리 컴파일된 헤더 파일을 열 수 없습니다. '.\Debug\vc120.pch': No such file or directory
+         코드를 생성하고 있습니다...
+     1>"C:\Users\SunE\Desktop\AI_OmokBattle_System_(3)\AI_OmokBattle_System_.vcxproj" 프로젝트를 빌드했습니다(Build 대상). - 실패
+
+빌드하지 못했습니다.
+
+경과 시간: 00:00:00.14
